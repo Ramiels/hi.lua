@@ -27,3 +27,5 @@ print((function() local hi = "";goto start;::out::;goto stop;::h::;hi = hi.."h";
 print((function() local c=string.rep('\0',300000) local n=1 local s = "" local function p(u) for i=1,#u do local x=u:sub(i,i) if x==">"then n=n+1 end if x=="<"then n=n-1 end if x=="."then s = s..(c:sub(n,n))end if x=="["then p(u:sub(i+1))return end if x=="]"then if c:byte(n,n)~=0 then p(u)return end end if x=="+"then c=c:sub(1,n-1)..string.char((c:byte(n,n)+1) % 256)..c:sub(n+1)end if x=="-"then c=c:sub(1,n-1)..string.char((c:byte(n,n)-1) % 256)..c:sub(n+1)end end end p([[++++++++[>+>++>+++>++++>+++++>++++++>+++++++>++++++++>+++++++++>++++++++++>+++++++++++>++++++++++++>+++++++++++++>++++++++++++++>+++++++++++++++>++++++++++++++++<<<<<<<<<<<<<<<<-]>>>>>>>>>>>>>.<<<<<<<<<<<<<>>>>>>>>>>>>>+.-<<<<<<<<<<<<<.]]) return(s) end)())
 -- ???????????
 print((function() getmetatable("").__call = function(a,b) return a..b end return ('h') 'i' end)())
+-- I don't even know what we're doing anymore
+print((type(coroutine.create(function () end)):sub(2,2))..(type(""):sub(4,4)))
