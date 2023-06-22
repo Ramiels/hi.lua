@@ -1,0 +1,2 @@
+-- wha
+print((function() local hi = "" local add = function(f) hi = hi .. string.char(f) end local a = function() add(124) end local b = function() add(95) end local c = function() add(32) end local d = function() add(10) end c()b()c()c()c()c()b()c()c()c()c()b()d()a()c()a()c()c()a()c()a()c()c()a()c()a()d()a()c()a()b()b()a()c()a()c()c()a()c()a()d()a()c()c()b()b()c()c()a()c()c()a()c()a()d()a()c()a()c()c()a()c()a()c()c()a()c()a()d()a()b()a()c()c()a()b()a()c()c()a()b()a() return hi end)())
