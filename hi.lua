@@ -5,6 +5,8 @@ print("hi")
 print("h" .. "i")
 print(("hi"):sub(1, 2))
 print(("shit"):match("s(..)"))
+-- RNG Manipulation
+print(math.randomseed(861765) and string.char(math.random(420), math.random(420)))
 -- Functions
 print((function() return "hi" end)())
 -- Backwards
