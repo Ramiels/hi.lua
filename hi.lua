@@ -4,13 +4,14 @@ print("hi")
 -- String manipulation hell
 print("h" .. "i")
 print(("hi"):sub(1, 2))
+print(("ih"):reverse())
 print(("shit"):match("s(..)"))
 -- RNG Manipulation
 print(math.randomseed(861765) and string.char(math.random(420), math.random(420)))
 -- Functions
 print((function() return "hi" end)())
--- Backwards
-print((function() local s = "ih" return (s:sub(-1, -1) .. s:sub(1, 1)) end)())
+-- Reverse
+print((function() local s, t = "ih", {} for i=s:len(),1,-1 do t[(s:len()-i)+1] = s:sub(i,i) end return table.concat(t) end)())
 -- Bytes
 print((function() local t = {} for i = 104, 105, 1 do t[#t + 1] = string.char(i) end return table.concat(t) end)())
 -- Bogohi
