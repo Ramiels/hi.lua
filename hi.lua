@@ -20,3 +20,5 @@ print((function() local result = "" repeat local str = {} for i = 1, 2 do str[i]
 print((function() local answer = "hi" local result = "" for i=1,answer:len() do local add = "" repeat add = string.char(math.random(48, 125)) until add == answer:sub(i,i) result = result:gsub('()',{[i]=add}) end return result end)())
 -- Metahi
 print((function() local hi = {} setmetatable(hi, { __tostring = function(currtable) return "hi" end }) return (hi) end)())
+-- Goto Hell
+print((function() local hi = "";goto start;::out::;goto stop;::h::;hi = hi.."h";goto i;::start::;goto h;;::i::;hi = hi.."i";goto out;::stop::return hi end)())
